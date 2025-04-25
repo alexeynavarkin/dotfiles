@@ -1,6 +1,6 @@
 #!/bin/bash
 
-cp . $HOME/.aerospace.toml
+cp files/.aerospace.toml $HOME/.aerospace.toml
 
 rm -rf $HOME/.config/sketchybar
-cp -r .config/sketchybar $HOME/.config/sketchybar
+cp -r files/.config/sketchybar $HOME/.config
