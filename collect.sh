@@ -2,5 +2,8 @@
 
 cp $HOME/.aerospace.toml files/.aerospace.toml
 
-rm -rf .config/sketchybar
+rm -rf files/.config/sketchybar
 cp -r $HOME/.config/sketchybar files/.config
+
+rm -rf files/.config/iterm-config
+cp -r $HOME/.config/iterm-config files/.config
