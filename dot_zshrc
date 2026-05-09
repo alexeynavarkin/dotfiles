@@ -1,0 +1,34 @@
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+# Antigen.
+## Load antigen itself.
+source $HOME/bin/antigen.zsh
+
+## Load the oh-my-zsh's library.
+antigen use oh-my-zsh
+
+## Load default plugins.
+antigen bundle git
+
+## Load custom plugins.
+antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+## Load theme.
+antigen theme mortalscumbag
+
+## All done, let's apply.
+antigen apply
+# Antigen.
+
+# User binaries to PATH.
+export PATH="$PATH:$HOME/bin"
+export PATH="$HOME/.local/bin:$PATH"
+#
+
+ZSHRC_LOCAL_PATH="$HOME/.zshrc-local"
+if [[ -f $ZSHRC_LOCAL_PATH ]]; then
+    source $ZSHRC_LOCAL_PATH
+fi

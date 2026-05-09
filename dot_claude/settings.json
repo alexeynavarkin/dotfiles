@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [],
+    "defaultMode": "default"
+  },
+  "statusLine": {
+    "type": "command",
+    "command": "sh ~/.claude/statusline-command.sh"
+  },
+  "enabledPlugins": {
+    "gopls-lsp@claude-plugins-official": true
+  },
+  "effortLevel": "medium",
+  "autoUpdatesChannel": "stable",
+  "verbose": true
+}
