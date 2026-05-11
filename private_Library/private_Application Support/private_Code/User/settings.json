@@ -1,0 +1,300 @@
+{
+  "window.titleBarStyle": "native",
+  "window.restoreWindows": "none",
+  "window.commandCenter": false,
+  "custom-ui-style.electron": {
+    "frame": false
+  },
+  "workbench.startupEditor": "none",
+  "go.toolsManagement.autoUpdate": true,
+  "editor.unicodeHighlight.allowedLocales": {
+    "ru": true
+  },
+  "redhat.telemetry.enabled": false,
+  "[python]": {
+    "editor.formatOnType": true
+  },
+  "yaml.format.printWidth": 100,
+  "isort.check": true,
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
+  "explorer.confirmDragAndDrop": false,
+  "settingsSync.ignoredSettings": [],
+  "workbench.colorTheme": "Catppuccin Frappé",
+  "git.openRepositoryInParentFolders": "never",
+  "editor.renderWhitespace": "all",
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "editor.minimap.showSlider": "always",
+  "editor.inlineSuggest.showToolbar": "always",
+  "extensions.ignoreRecommendations": true,
+  "terminal.external.osxExec": "iTerm.app",
+  "problems.showCurrentInStatus": true,
+  "isort.importStrategy": "fromEnvironment",
+  "python.testing.pytestEnabled": true,
+  "jupyter.enableExtendedPythonKernelCompletions": true,
+  "dart.flutterSdkPath": "/Users/alexnav/Documents/flutter",
+  "go.inlayHints.assignVariableTypes": true,
+  "go.inlayHints.compositeLiteralFields": true,
+  "go.inlayHints.compositeLiteralTypes": true,
+  "go.inlayHints.constantValues": true,
+  "go.inlayHints.parameterNames": true,
+  "go.inlayHints.rangeVariableTypes": true,
+  "workbench.activityBar.location": "hidden",
+  "Lua.format.defaultConfig": {
+    "max_line_length": "1000"
+  },
+  "diffEditor.ignoreTrimWhitespace": false,
+  "diffEditor.renderSideBySide": false,
+  "diffEditor.codeLens": true,
+  "editor.fontFamily": "Monaco, 'Courier New', monospace",
+  "chat.commandCenter.enabled": false,
+  "workbench.layoutControl.enabled": false,
+  "workbench.navigationControl.enabled": false,
+  "workbench.tips.enabled": false,
+  "workbench.editor.enablePreview": false,
+  "workbench.iconTheme": "catppuccin-frappe",
+  "files.autoSave": "afterDelay",
+  "files.autoSaveWhenNoErrors": true,
+  "makefile.configureOnOpen": false,
+  "docker.extension.enableComposeLanguageServer": false,
+  "editor.linkedEditing": true,
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "notebook.output.textLineLimit": 100,
+  "yaml.schemas": {
+    "file:///Users/alexnav/.vscode/extensions/continue.continue-1.2.2-darwin-arm64/config-yaml-schema.json": [
+      ".continue/**/*.yaml"
+    ]
+  },
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "python.analysis.typeCheckingMode": "standard",
+  "sqlite3-editor.ui.minimizePanel": true,
+  "roo-cline.allowedCommands": [
+    "git log",
+    "git diff",
+    "git show"
+  ],
+  "roo-cline.deniedCommands": [],
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    },
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "terminal.integrated.defaultProfile.linux": "zsh",
+  "roo-cline.debug": false,
+  "gitlens.views.scm.grouped.views": {
+    "commits": true,
+    "branches": true,
+    "remotes": true,
+    "stashes": true,
+    "tags": true,
+    "worktrees": true,
+    "contributors": true,
+    "fileHistory": true,
+    "repositories": true,
+    "searchAndCompare": false,
+    "launchpad": false
+  },
+  "protobuf.protoc.path": "/Users/a.navarkin/Library/Application Support/Code/User/globalStorage/drblury.protobuf-vsc/bin/protoc",
+  "claudeCode.preferredLocation": "panel",
+  "hediet.vscode-drawio.resizeImages": null,
+  "protobuf.buf.path": "/Users/a.navarkin/go/bin/buf",
+  "claudeCode.selectedModel": "opus",
+  "workbench.statusBar.visible": false,
+  "hediet.vscode-drawio.theme": "min",
+  "custom-ui-style.stylesheet": {
+    ".editor-group-watermark": "display: none !important;"
+  },
+  "settings.cycle": [
+    {
+      "id": "background",
+      "values": [
+        {
+          "custom-ui-style.stylesheet": {
+            ".editor-group-container.empty": "position: relative; overflow: hidden; contain: strict;",
+            ".editor-group-watermark > *": "display: none !important;",
+            ".editor-group-watermark": "position: absolute !important; inset: 0 !important; pointer-events: none; z-index: 2; contain: layout paint;",
+            ".editor-group-container.empty::before": {
+              "content": "''",
+              "position": "absolute",
+              "inset": "0",
+              "background": "radial-gradient(1px 1px at 3% 7%, rgba(255,255,255,0.7), transparent), radial-gradient(1px 1px at 8% 22%, rgba(255,255,255,0.5), transparent), radial-gradient(1.5px 1.5px at 13% 41%, rgba(255,255,255,0.6), transparent), radial-gradient(1px 1px at 18% 63%, rgba(255,255,255,0.4), transparent), radial-gradient(1px 1px at 23% 86%, rgba(255,255,255,0.6), transparent), radial-gradient(1px 1px at 27% 14%, rgba(255,255,255,0.5), transparent), radial-gradient(2px 2px at 32% 33%, rgba(255,255,255,0.7), transparent), radial-gradient(1px 1px at 37% 56%, rgba(255,255,255,0.4), transparent), radial-gradient(1px 1px at 42% 78%, rgba(255,255,255,0.5), transparent), radial-gradient(1.5px 1.5px at 47% 11%, rgba(255,255,255,0.6), transparent), radial-gradient(1px 1px at 52% 27%, rgba(255,255,255,0.4), transparent), radial-gradient(1px 1px at 57% 49%, rgba(255,255,255,0.7), transparent), radial-gradient(1px 1px at 62% 71%, rgba(255,255,255,0.5), transparent), radial-gradient(2px 2px at 67% 19%, rgba(255,255,255,0.6), transparent), radial-gradient(1px 1px at 72% 36%, rgba(255,255,255,0.4), transparent), radial-gradient(1px 1px at 77% 58%, rgba(255,255,255,0.5), transparent), radial-gradient(1.5px 1.5px at 82% 82%, rgba(255,255,255,0.7), transparent), radial-gradient(1px 1px at 87% 24%, rgba(255,255,255,0.5), transparent), radial-gradient(1px 1px at 92% 47%, rgba(255,255,255,0.6), transparent), radial-gradient(1px 1px at 97% 89%, rgba(255,255,255,0.4), transparent), radial-gradient(2px 2px at 6% 51%, rgba(255,255,255,0.6), transparent), radial-gradient(1px 1px at 14% 76%, rgba(255,255,255,0.5), transparent), radial-gradient(1px 1px at 25% 95%, rgba(255,255,255,0.7), transparent), radial-gradient(1px 1px at 38% 4%, rgba(255,255,255,0.4), transparent), radial-gradient(1.5px 1.5px at 49% 23%, rgba(255,255,255,0.6), transparent), radial-gradient(1px 1px at 60% 92%, rgba(255,255,255,0.7), transparent), radial-gradient(1px 1px at 71% 6%, rgba(255,255,255,0.5), transparent), radial-gradient(1px 1px at 83% 65%, rgba(255,255,255,0.4), transparent), radial-gradient(2px 2px at 94% 13%, rgba(255,255,255,0.7), transparent), radial-gradient(1px 1px at 11% 38%, rgba(255,255,255,0.5), transparent), radial-gradient(1px 1px at 30% 67%, rgba(255,255,255,0.6), transparent), radial-gradient(1.5px 1.5px at 55% 9%, rgba(255,255,255,0.5), transparent), radial-gradient(1px 1px at 78% 41%, rgba(255,255,255,0.7), transparent), radial-gradient(1px 1px at 89% 73%, rgba(255,255,255,0.4), transparent)",
+              "background-size": "200% 200%",
+              "animation": "drift 120s linear infinite",
+              "opacity": "0.75",
+              "pointer-events": "none",
+              "z-index": "0"
+            },
+            ".editor-group-container.empty::after": {
+              "content": "''",
+              "position": "absolute",
+              "inset": "0",
+              "background": "radial-gradient(1.5px 1.5px at 7% 14%, rgba(255,255,255,0.9), transparent), radial-gradient(1px 1px at 17% 43%, rgba(255,255,255,0.8), transparent), radial-gradient(2px 2px at 27% 71%, rgba(255,255,255,0.9), transparent), radial-gradient(1px 1px at 38% 22%, rgba(255,255,255,0.8), transparent), radial-gradient(1.5px 1.5px at 48% 54%, rgba(255,255,255,0.9), transparent), radial-gradient(1px 1px at 58% 86%, rgba(255,255,255,0.8), transparent), radial-gradient(2px 2px at 68% 31%, rgba(255,255,255,0.9), transparent), radial-gradient(1px 1px at 78% 63%, rgba(255,255,255,0.8), transparent), radial-gradient(1.5px 1.5px at 88% 17%, rgba(255,255,255,0.9), transparent), radial-gradient(1px 1px at 96% 49%, rgba(255,255,255,0.8), transparent), radial-gradient(2px 2px at 12% 78%, rgba(255,255,255,0.9), transparent), radial-gradient(1px 1px at 33% 8%, rgba(255,255,255,0.8), transparent), radial-gradient(1.5px 1.5px at 53% 38%, rgba(255,255,255,0.9), transparent), radial-gradient(1px 1px at 73% 92%, rgba(255,255,255,0.8), transparent), radial-gradient(2px 2px at 91% 81%, rgba(255,255,255,0.9), transparent), radial-gradient(1px 1px at 23% 95%, rgba(255,255,255,0.8), transparent), radial-gradient(1.5px 1.5px at 43% 5%, rgba(255,255,255,0.9), transparent), radial-gradient(1px 1px at 63% 27%, rgba(255,255,255,0.8), transparent)",
+              "animation": "twinkle 4s ease-in-out infinite",
+              "will-change": "opacity",
+              "pointer-events": "none",
+              "z-index": "1"
+            },
+            ".editor-group-watermark::before": {
+              "content": "''",
+              "position": "absolute",
+              "top": "10%",
+              "left": "0",
+              "width": "55vw",
+              "height": "2px",
+              "transform": "rotate(24deg)",
+              "transform-origin": "0 0",
+              "background": "linear-gradient(90deg, transparent 0%, transparent 55%, rgba(220,235,255,0.08) 70%, rgba(225,240,255,0.28) 83%, rgba(235,245,255,0.65) 92%, rgba(245,250,255,0.95) 98%, rgb(255,255,255) 100%)",
+              "background-size": "0px 100%",
+              "background-repeat": "no-repeat",
+              "background-position": "5vw 0",
+              "filter": "drop-shadow(0 0 4px rgba(180,210,255,0.7))",
+              "animation": "shoot1 11s linear infinite",
+              "will-change": "background-position, opacity",
+              "opacity": "0",
+              "pointer-events": "none"
+            },
+            ".editor-group-watermark::after": {
+              "content": "''",
+              "position": "absolute",
+              "top": "26%",
+              "left": "40vw",
+              "width": "55vw",
+              "height": "2px",
+              "transform": "rotate(14deg)",
+              "transform-origin": "0 0",
+              "background": "linear-gradient(90deg, transparent 0%, transparent 58%, rgba(225,235,255,0.08) 72%, rgba(230,240,255,0.3) 84%, rgba(240,247,255,0.7) 93%, rgba(248,251,255,0.95) 98%, rgb(255,255,255) 100%)",
+              "background-size": "0px 100%",
+              "background-repeat": "no-repeat",
+              "background-position": "5vw 0",
+              "filter": "drop-shadow(0 0 4px rgba(190,215,255,0.7))",
+              "animation": "shoot2 19s linear infinite",
+              "animation-delay": "4s",
+              "will-change": "background-position, opacity",
+              "opacity": "0",
+              "pointer-events": "none"
+            },
+            "@keyframes drift": {
+              "from": {
+                "background-position": "0% 0%"
+              },
+              "to": {
+                "background-position": "100% 100%"
+              }
+            },
+            "@keyframes twinkle": {
+              "0%": {
+                "opacity": "0.95"
+              },
+              "50%": {
+                "opacity": "0.15"
+              },
+              "100%": {
+                "opacity": "0.95"
+              }
+            },
+            "@keyframes shoot1": {
+              "0%": {
+                "background-position": "5vw 0",
+                "background-size": "0px 100%",
+                "opacity": "0"
+              },
+              "6%": {
+                "background-position": "5vw 0",
+                "background-size": "0px 100%",
+                "opacity": "0"
+              },
+              "6.5%": {
+                "background-position": "7vw 0",
+                "background-size": "40px 100%",
+                "opacity": "0.6"
+              },
+              "7.5%": {
+                "background-position": "11vw 0",
+                "background-size": "120px 100%",
+                "opacity": "1"
+              },
+              "9%": {
+                "background-position": "20vw 0",
+                "background-size": "200px 100%",
+                "opacity": "1"
+              },
+              "10%": {
+                "background-position": "26vw 0",
+                "background-size": "210px 100%",
+                "opacity": "0.5"
+              },
+              "11%": {
+                "background-position": "31vw 0",
+                "background-size": "210px 100%",
+                "opacity": "0"
+              },
+              "100%": {
+                "background-position": "31vw 0",
+                "opacity": "0"
+              }
+            },
+            "@keyframes shoot2": {
+              "0%": {
+                "background-position": "5vw 0",
+                "background-size": "0px 100%",
+                "opacity": "0"
+              },
+              "4%": {
+                "background-position": "5vw 0",
+                "background-size": "0px 100%",
+                "opacity": "0"
+              },
+              "4.5%": {
+                "background-position": "7vw 0",
+                "background-size": "50px 100%",
+                "opacity": "0.5"
+              },
+              "5.5%": {
+                "background-position": "11vw 0",
+                "background-size": "140px 100%",
+                "opacity": "0.95"
+              },
+              "7%": {
+                "background-position": "20vw 0",
+                "background-size": "230px 100%",
+                "opacity": "1"
+              },
+              "8%": {
+                "background-position": "27vw 0",
+                "background-size": "240px 100%",
+                "opacity": "0.5"
+              },
+              "9%": {
+                "background-position": "32vw 0",
+                "background-size": "240px 100%",
+                "opacity": "0"
+              },
+              "100%": {
+                "background-position": "32vw 0",
+                "opacity": "0"
+              }
+            }
+          }
+        },
+        {
+          "custom-ui-style.stylesheet": {
+            ".editor-group-watermark": "display: none !important;"
+          }
+        }
+      ]
+    }
+  ]
+}
