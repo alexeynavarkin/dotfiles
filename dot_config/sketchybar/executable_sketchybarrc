@@ -12,7 +12,7 @@ PLUGIN_DIR="$CONFIG_DIR/plugins"
 # If you are looking for other colors, see the color picker:
 # https://felixkratz.github.io/SketchyBar/config/tricks#color-picker
 
-sketchybar --bar position=top height=30 blur_radius=30 color=0x40000000
+sketchybar --bar position=top height=30 blur_radius=0 color=0x40000000
 
 ##### Changing Defaults #####
 # We now change some default values, which are applied to all further items.
@@ -75,14 +75,32 @@ sketchybar --add item chevron left \
 # volume is registered. More info about the event system can be found here:
 # https://felixkratz.github.io/SketchyBar/config/events
 
-sketchybar --add item clock right \
-           --set clock update_freq=1 align=center width=128 script="$PLUGIN_DIR/clock.sh" \
+sketchybar --add item clock center \
+           --set clock update_freq=1 align=center script="$PLUGIN_DIR/clock.sh" \
            --add item volume right \
-           --set volume script="$PLUGIN_DIR/volume.sh" \
+           --set volume width=65 align=right script="$PLUGIN_DIR/volume.sh" \
            --subscribe volume volume_change \
            --add item battery right \
-           --set battery update_freq=120 script="$PLUGIN_DIR/battery.sh" \
-           --subscribe battery system_woke power_source_change
+           --set battery update_freq=120 width=65 align=right script="$PLUGIN_DIR/battery.sh" \
+           --subscribe battery system_woke power_source_change \
+           --add item ram.value right \
+           --set ram.value update_freq=5 width=40 align=right icon.drawing=off script="$PLUGIN_DIR/ram.sh" \
+           --add item ram.icon right \
+           --set ram.icon icon="RAM" label.drawing=off icon.padding_right=4 padding_left=4 padding_right=0 \
+           --add item cpu.value right \
+           --set cpu.value update_freq=2 width=40 align=right icon.drawing=off script="$PLUGIN_DIR/cpu.sh" \
+           --add item cpu.icon right \
+           --set cpu.icon icon="CPU" label.drawing=off icon.padding_right=4 padding_left=4 padding_right=0 \
+           --add item network.up right \
+           --set network.up width=55 align=right icon.drawing=off \
+           --add item network.up.arrow right \
+           --set network.up.arrow icon="↑" label.drawing=off icon.padding_right=2 padding_left=2 padding_right=0 \
+           --add item network.down right \
+           --set network.down width=55 align=right icon.drawing=off update_freq=2 script="$PLUGIN_DIR/network.sh" \
+           --add item network.down.arrow right \
+           --set network.down.arrow icon="↓" label.drawing=off icon.padding_right=2 padding_left=2 padding_right=0 \
+           --add item network.icon right \
+           --set network.icon icon="NET" label.drawing=off icon.padding_right=4 padding_left=4 padding_right=0
 
 ##### Force all scripts to run the first time (never do this in a script) #####
 sketchybar --update
