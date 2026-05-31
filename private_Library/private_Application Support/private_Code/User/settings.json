@@ -22,7 +22,7 @@
   },
   "explorer.confirmDragAndDrop": false,
   "settingsSync.ignoredSettings": [],
-  "workbench.colorTheme": "Catppuccin Frappé",
+  "workbench.colorTheme": "SynthWave '84",
   "git.openRepositoryInParentFolders": "never",
   "editor.renderWhitespace": "all",
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
@@ -296,5 +296,12 @@
         }
       ]
     }
-  ]
+  ],
+  "settingsSync.ignoredExtensions": [
+    
+
+  ],
+  "workbench.editorAssociations": {
+    "git-rebase-todo": "default"
+  }
 }
