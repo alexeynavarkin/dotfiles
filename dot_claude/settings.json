@@ -3,6 +3,7 @@
     "allow": [],
     "defaultMode": "default"
   },
+  "model": "claude-fable-5[1m]",
   "statusLine": {
     "type": "command",
     "command": "sh ~/.claude/statusline-command.sh"
@@ -12,5 +13,7 @@
   },
   "effortLevel": "medium",
   "autoUpdatesChannel": "stable",
-  "verbose": true
+  "tui": "fullscreen",
+  "verbose": true,
+  "skipAutoPermissionPrompt": true
 }

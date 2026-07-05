@@ -22,7 +22,7 @@
   },
   "explorer.confirmDragAndDrop": false,
   "settingsSync.ignoredSettings": [],
-  "workbench.colorTheme": "SynthWave '84",
+  "workbench.colorTheme": "Dracula Theme Soft",
   "git.openRepositoryInParentFolders": "never",
   "editor.renderWhitespace": "all",
   "editor.bracketPairColorization.independentColorPoolPerBracketType": true,

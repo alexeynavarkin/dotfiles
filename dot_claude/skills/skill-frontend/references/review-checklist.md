@@ -1,105 +1,99 @@
 # Review Checklist
 
-Run through this before calling a component or feature done.
+Run through this before calling a component or feature done. Stack-agnostic — applies to any Gravity UI app.
 
 ## Accessibility
 
-- [ ] Interactive elements are `<button>`, `<a>`, or have proper ARIA roles — never `<div onClick>`.
-- [ ] Every form field has an associated `<label>`.
-- [ ] Errors are connected via `aria-describedby` and `aria-invalid`.
-- [ ] Focus ring is visible on all focusable elements.
-- [ ] Keyboard-only user can complete every flow (Tab, Shift+Tab, Enter, Space, Esc).
-- [ ] Dialog/modal traps focus and returns focus to trigger on close (shadcn handles this).
-- [ ] Icons have `aria-label` if meaningful, `aria-hidden` if decorative.
-- [ ] Color is not the only signal for errors/success/warnings.
-- [ ] Headings are in order (h1 → h2 → h3; don't skip levels).
-- [ ] Images have `alt` text — empty `alt=""` if purely decorative.
+- [ ] Interactive elements are semantic (`<button>`, `<a>`) or rendered through a Gravity UI component — never `<div onClick>`.
+- [ ] Every form field has an associated label (Gravity UI `ControlLabel`, `<label htmlFor>`, or the component's `label` prop).
+- [ ] Errors are wired with `aria-describedby` and `aria-invalid` (Gravity UI inputs do this when you pass `errorMessage`).
+- [ ] Focus ring is visible on all focusable elements (do not override Gravity UI's focus styles).
+- [ ] Keyboard-only flow works: Tab, Shift+Tab, Enter, Space, Esc, arrow keys in menus/selects.
+- [ ] Dialog/Drawer/Sheet trap focus and return it to the trigger (uikit handles this — do not add your own trap).
+- [ ] Icons via `<Icon>` are decorative by default; pass `aria-label` on the parent button when the icon is the only content.
+- [ ] Color is never the only signal — pair with icon or text.
+- [ ] Heading order is preserved (h1 → h2 → h3; don't skip).
+- [ ] Images have `alt` text; decorative images use `alt=""`.
+- [ ] App is usable in `light`, `dark`, and (if declared) `*-hc` high-contrast themes.
 
-## Type safety
+## Design system fidelity
 
-- [ ] No `any`, no `@ts-ignore`, no non-null assertions (`!`) without explaining comments.
-- [ ] Props are explicitly typed with `interface` or `type`.
-- [ ] API responses are validated with Zod at the boundary.
-- [ ] No `as` casts except at genuine boundaries (e.g., `JSON.parse` result).
-- [ ] `noUncheckedIndexedAccess` passes — array and object index access is narrowed where needed.
+- [ ] No hand-rolled primitive that Gravity UI already provides. Check `references/gravity-ui-uikit-components.md` before building a new control.
+- [ ] No third-party UI library used alongside Gravity UI for the same primitive (no MUI Button next to uikit Button).
+- [ ] Colors, spacing, and typography come from Gravity UI tokens (`var(--g-color-*)`, `var(--g-spacing-*)`) — not hard-coded hex / px.
+- [ ] No `lab/` or `legacy/` components in production code.
+- [ ] Icons come from `@gravity-ui/icons` and render through `<Icon data={...} />`.
+- [ ] Toaster is instantiated once at the app root via `ToasterProvider`, not per-component.
+
+## Type safety (if TypeScript)
+
+- [ ] No `any`, no `@ts-ignore`, no non-null assertions (`!`) without an explaining comment.
+- [ ] Component props are explicitly typed.
+- [ ] Data from external sources (API, URL, storage) is validated at the boundary.
+- [ ] No `as` casts except at genuine boundaries.
 
 ## Performance
 
-- [ ] Route is code-split with `React.lazy` + `<Suspense>` (unless it's the landing page).
-- [ ] No data fetching in `useEffect` — TanStack Query instead.
-- [ ] Long lists (>100 items) are virtualized.
-- [ ] Images have `width`/`height` or `aspect-ratio` to prevent CLS.
+- [ ] Routes / heavy components are code-split (lazy-loaded) where it matters.
+- [ ] Long lists (>100 items) use a virtualized component (`@gravity-ui/table`, uikit `List`, or library equivalent).
+- [ ] Images have `width`/`height` or `aspect-ratio` to prevent layout shift.
 - [ ] Stable keys in lists — no `key={index}` for reorderable data.
-- [ ] No `useMemo`/`useCallback` added speculatively — only where measured or needed for stable deps.
+- [ ] `useMemo` / `useCallback` only where measured or required for stable deps.
+- [ ] No data fetching in raw `useEffect` when the project has a query library — use it.
 
-## UX & Visual Design
+## UX & visual polish
 
 **States & feedback:**
-- [ ] Loading state uses skeletons matching the final layout (not just a spinner).
-- [ ] Error state shows a clear message + a way to retry. Inline errors below relevant fields.
-- [ ] Empty state has a heading, explanation, and a primary action (CTA button).
-- [ ] Submit buttons disable during submission and change label ("Saving…").
-- [ ] Destructive actions confirm via AlertDialog with a verb-labeled button (destructive = secondary style).
-- [ ] Forms validate on blur, support keyboard submission (Enter), never clear input on error.
-- [ ] Toasts are for success confirmations only (auto-dismiss 5-8s); error toasts are persistent.
+- [ ] Loading state uses `Skeleton` matching the final layout, not just a spinner.
+- [ ] Error state shows a clear message + a retry path. Inline errors live next to the relevant field.
+- [ ] Empty state uses `PlaceholderContainer` (or equivalent) with heading, explanation, and a primary action.
+- [ ] Submit buttons enter a `loading` state during submission and reflect it in their label.
+- [ ] Destructive actions confirm via `Dialog` with a verb-labeled `danger`/`outlined-danger` button.
+- [ ] Forms validate on blur where possible; Enter submits; input is not cleared on error.
+- [ ] Success toasts auto-dismiss; error toasts persist until dismissed or the issue is resolved.
 
-**Visual hierarchy & layout:**
-- [ ] One primary action per view — all others are secondary/ghost/outline (Von Restorff).
-- [ ] Text containers have constrained width (`max-w-prose` or similar) — no full-viewport text.
-- [ ] Spacing follows Gestalt proximity: internal padding < external margin for groups.
-- [ ] Visual hierarchy is clear: size > weight > color > whitespace guides the eye.
+**Hierarchy & layout:**
+- [ ] One primary action per view — all others are secondary / outlined / flat.
+- [ ] Text columns have constrained width — no full-viewport line lengths.
+- [ ] Group spacing follows Gestalt proximity: internal padding < external margin.
+- [ ] Hierarchy is communicated through size, weight, color, and whitespace — in that order.
 
-**Transitions & interaction:**
-- [ ] Every interactive element has hover, focus-visible, and active states.
-- [ ] Transitions: 150ms hovers, 200-300ms modals/dropdowns. Nothing > 500ms.
-- [ ] Animations respect `prefers-reduced-motion` (opt-in via media query).
+**Interaction:**
+- [ ] Every interactive element has hover, focus-visible, and active states (Gravity UI provides these — do not flatten them).
+- [ ] Transitions: snappy for hovers (~150ms), 200–300ms for overlays. Nothing over 500ms.
+- [ ] Motion respects `prefers-reduced-motion`.
 
 **Responsive & touch:**
-- [ ] Touch targets ≥ 44×44px. Spacing between targets ≥ 8px.
-- [ ] Tested at 375px width — no horizontal scroll, content readable, layout single-column.
-- [ ] Primary mobile actions in bottom-center (thumb zone).
+- [ ] Touch targets ≥ 44×44px on mobile. Spacing between targets ≥ 8px.
+- [ ] Tested at 375px width — no horizontal scroll, content readable, layout collapses cleanly.
+- [ ] `MobileProvider` is configured (or kept default) appropriately for the deployment target.
+- [ ] Primary mobile actions are reachable in the thumb zone.
 
 **Color & contrast:**
 - [ ] Text contrast ≥ 4.5:1 (AA). Large text ≥ 3:1. UI components ≥ 3:1.
-- [ ] Tested in both light and dark mode (if applicable).
-- [ ] Dark mode uses near-black (not #000), lighter surfaces for elevation, desaturated colors.
+- [ ] Both `light` and `dark` themes verified.
+- [ ] Custom theme (if any) generated via Themer, not by overriding individual CSS variables ad hoc.
 
 ## Testability
 
-- [ ] Component's behavior is driven by props — side effects pushed to hooks.
-- [ ] At least one test for the happy path.
-- [ ] Tests query by role/label, not testId.
-- [ ] Error states are tested (invalid form, failed fetch).
-
-## Visual style (sharp minimal)
-
-- [ ] Border radius: `rounded-md` (6px) buttons/inputs, `rounded-lg` (8px) cards/dialogs. No `rounded-xl`+, no `rounded-full` (except toggles).
-- [ ] No box-shadows in dark mode. Light mode: `shadow-sm` max for dropdowns.
-- [ ] Surfaces: near-black backgrounds, not `#000`. Elevation via lighter bg, not shadow.
-- [ ] Borders: 1px `border-border`, no thick/double borders.
-- [ ] Typography: `text-sm` body, `font-semibold` max (no `font-bold` in UI), no italic, no decorative fonts.
-- [ ] Heights: `h-9` default for buttons/inputs. Compact density.
-- [ ] One primary button per view. Others: secondary/ghost/outline.
-- [ ] No gradients on surfaces. No colored card backgrounds. No zebra-striped tables.
-- [ ] Icons: Lucide, `size-4` inline, `text-muted-foreground` default.
-- [ ] Avatars: `rounded-md` (not circular).
+- [ ] Components are mostly driven by props; side effects extracted to hooks.
+- [ ] At least one test covers the happy path.
+- [ ] Tests query by role/label/text, not by `data-testid` first.
+- [ ] Error and empty states are tested.
 
 ## Code hygiene
 
-- [ ] File name is kebab-case, export is PascalCase.
-- [ ] `cn()` used for conditional classes, not string concatenation.
-- [ ] No inline styles (`style={{…}}`) unless the value is dynamic (e.g., a computed color).
-- [ ] Tailwind uses design tokens (`bg-background`, `gap-4`), not arbitrary values like `h-[47px]`.
-- [ ] `forwardRef` not used — React 19 accepts `ref` as a prop.
-- [ ] Server data lives in TanStack Query, not Zustand.
-- [ ] URL state (filters, pagination) is in search params, not local state.
+- [ ] File/component naming matches the project's existing convention.
+- [ ] No inline `style={{…}}` unless the value is dynamically computed.
+- [ ] Refs are passed as a normal prop (uikit forwards refs; do not wrap in `forwardRef` yourself).
+- [ ] Server data lives in the project's query layer; URL state (filters, pagination) lives in search params, not local component state.
 
 ## Before PR
 
-- [ ] `npm run typecheck` passes.
-- [ ] `npm run lint` passes.
-- [ ] `npm test` passes.
-- [ ] `npm run build` succeeds.
-- [ ] Manual test in Chrome **and** Safari (Safari catches Flexbox/Tailwind quirks).
-- [ ] Test at mobile width (375px) — no horizontal scroll, tap targets ≥ 44×44.
-- [ ] Test in dark mode if the app has a theme.
+- [ ] Typecheck passes.
+- [ ] Lint passes.
+- [ ] Tests pass.
+- [ ] Production build succeeds.
+- [ ] Manual smoke test in Chrome **and** Safari.
+- [ ] Mobile width (375px) verified — no horizontal scroll, tap targets ≥ 44×44.
+- [ ] Both themes verified if the app supports theme switching.

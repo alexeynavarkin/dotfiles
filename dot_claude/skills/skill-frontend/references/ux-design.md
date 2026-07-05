@@ -1,6 +1,8 @@
 # UX Design Reference
 
-Comprehensive guide for designing beautiful, usable interfaces. Load this when building UI from scratch, designing layouts, choosing component patterns, or reviewing UX quality.
+Comprehensive guide for designing beautiful, usable interfaces. Stack-agnostic UX principles. Load this when building UI from scratch, designing layouts, choosing component patterns, or reviewing UX quality.
+
+> **Note on examples.** Some code snippets below use Tailwind class names as shorthand for sizes/spacing (e.g. `text-sm` ≈ 14px, `gap-4` ≈ 16px, `max-w-prose` ≈ 65ch). When working in a Gravity UI project, translate these to **Gravity UI tokens** (`var(--g-spacing-*)`, `var(--g-text-body-*-font-size)`, the `Text` component's `variant` prop) and uikit primitives (`Flex`, `Box`, `Card`, `Text`). The **pixel values and UX principles are what matter** — the Tailwind syntax is incidental.
 
 ---
 
@@ -41,7 +43,7 @@ Productivity soars when system response is **< 400ms**. Keep interactions feelin
 ### Aesthetic-Usability Effect
 Users perceive beautiful interfaces as more usable. **Invest in visual polish.**
 - Consistent spacing, aligned elements, and clean typography create trust.
-- Use shadcn/ui tokens and Tailwind's design system to ensure visual consistency.
+- Use Gravity UI tokens (`var(--g-color-*)`, `var(--g-spacing-*)`) to ensure visual consistency.
 - Small details matter: consistent border-radius, aligned padding, subtle shadows for depth.
 
 ### Von Restorff Effect (Isolation Effect)
@@ -555,7 +557,7 @@ Modular, asymmetric grid layouts. Each cell is a self-contained module.
 ```
 
 ### Command Palettes
-Accessible search-based navigation (`Cmd+K` / `Ctrl+K`). Use shadcn `<Command>` (built on `cmdk`).
+Accessible search-based navigation (`Cmd+K` / `Ctrl+K`). Gravity UI does not ship a dedicated palette — compose one from `Dialog` + `TextInput` + `Menu`/`List`, or wire in `cmdk` if you need fuzzy-search and section grouping out of the box.
 - Built-in fuzzy search, keyboard navigation, section grouping.
 - Handles 2,000-3,000 items without virtualization.
 

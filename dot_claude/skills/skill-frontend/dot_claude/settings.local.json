@@ -1,7 +1,10 @@
 {
   "permissions": {
     "allow": [
-      "WebSearch"
+      "WebSearch",
+      "WebFetch(domain:gravity-ui.com)",
+      "WebFetch(domain:preview.gravity-ui.com)",
+      "WebFetch(domain:github.com)"
     ]
   }
 }
